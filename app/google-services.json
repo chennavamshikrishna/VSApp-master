@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "192763937197",
+    "firebase_url": "https://vspetcare.firebaseio.com",
+    "project_id": "vspetcare",
+    "storage_bucket": "vspetcare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192763937197:android:b649a1eb207d8bba",
+        "android_client_info": {
+          "package_name": "com.vsapp.petcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192763937197-o7e7njalgorn7ojj864vvpsevjq2aral.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vsapp.petcare",
+            "certificate_hash": "26fb99c6526ae1903d8e8f5d68f1d91ecd41f2ac"
+          }
+        },
+        {
+          "client_id": "192763937197-u4ps6m0g82cjtbjtc9819li2312bc940.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCszHuAdDMIe6nXHWpqJB2Ma4L-bhM7LcI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192763937197-u4ps6m0g82cjtbjtc9819li2312bc940.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

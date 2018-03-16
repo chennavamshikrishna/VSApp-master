@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">VSApp</string>
+    <string name="app_logo">App Logo</string>
+    <string name="dog_avatar">Dog Avatar</string>
+    <string name="bark_bark_n_please_signin">Bark! Bark! \n Please Sign In</string>
+    <string name="google">Google+</string>
+    <string name="buzz_buzz_nin_case_of_contact">Buzz! Buzz!\nTo contact</string>
+    <string name="enter_phone_number">Enter Phone number</string>
+    <string name="code_sent_to">Code Sent To :\u0020</string>
+    <string name="resend">Resend</string>
+    <string name="resend_in">Resend in :\u0020</string>
+    <string name="dog_image">Dog Image</string>
+    <string name="diet">Diet</string>
+    <string name="info">Info</string>
+    <string name="skip">Skip</string>
+    <string name="done">Done</string>
+    <string name="introduction_image">Introduction Image</string>
+</resources>

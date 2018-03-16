@@ -1,0 +1,101 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    android:scrollbars="none">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dog_avatar_holder"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/circular_image_view"
+            android:padding="10dp"
+            android:src="@drawable/ic_dog_avatar"
+            app:layout_anchor="@id/login_card_holder"
+            app:layout_anchorGravity="top|center" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/login_card_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="95dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/signin_dog_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="@string/buzz_buzz_nin_case_of_contact"
+                    android:textColor="@color/material_blue"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/phone_number_met"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/signin_dog_language"
+                    android:layout_alignLeft="@+id/signin_dog_language"
+                    android:layout_alignRight="@id/signin_dog_language"
+                    android:layout_alignStart="@+id/signin_dog_language"
+                    android:layout_below="@+id/signin_dog_language"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    app:met_autoValidate="true"
+                    app:met_baseColor="@color/material_blue"
+                    app:met_clearButton="true"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelText="Phone Number"
+                    app:met_floatingLabelTextColor="@color/material_blue"
+                    app:met_floatingLabelTextSize="15sp"
+                    app:met_maxCharacters="10"
+                    app:met_primaryColor="@color/material_blue"
+                    app:met_textColor="@color/material_blue"
+                    app:met_underlineColor="@color/material_blue" />
+
+                <TextView
+                    android:id="@+id/phone_number_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phone_number_met"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/signin_button_background"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/fui_next_default"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>

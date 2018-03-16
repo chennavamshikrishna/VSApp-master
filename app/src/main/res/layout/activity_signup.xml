@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@drawable/activity_background"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dog_avatar_holder"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circular_image_view"
+            android:padding="10dp"
+            android:src="@drawable/ic_dog_avatar"
+            app:layout_anchor="@id/login_card_holder"
+            app:layout_anchorGravity="top|center" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/login_card_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/login_card_holder"
+                android:layout_alignStart="@+id/login_card_holder"
+                android:layout_alignTop="@+id/login_card_holder">
+
+                <TextView
+                    android:id="@+id/signin_dog_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="@string/bark_bark_n_please_signin"
+                    android:textColor="#01579B"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/google_signin"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@id/signin_dog_language"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/signin_button_background"
+                    android:drawableLeft="@drawable/ic_google_plus_logo"
+                    android:drawableStart="@drawable/ic_google_plus_logo"
+                    android:paddingLeft="20dp"
+                    android:paddingStart="20dp"
+                    android:text="@string/google"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_blue</item>
+        <item name="colorPrimaryDark">@color/material_blue</item>
+        <item name="colorAccent">@color/material_blue</item>
+        <item name="android:windowEnterAnimation">@anim/left_to_right</item>
+        <item name="android:windowExitAnimation">@anim/right_to_left</item>
+    </style>
+
+
+    <style name="PinWidget.PinView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>
