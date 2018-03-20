@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.vsapp.petcare">
+    package="com.vsapp.petcare">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name="com.vsapp.petcare.presentation.splash.FireBaseApp"
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
@@ -16,14 +18,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".presentation.home.MainActivity" />
         <activity android:name=".presentation.signUp.SignUpActivity" />
         <activity android:name=".presentation.signUp.PhoneNumberVerification" />
-        <activity android:name=".presentation.splash.OnBoardingActivity">
-
-        </activity>
+        <activity android:name=".presentation.splash.OnBoardingActivity"></activity>
+        <activity android:name=".presentation.home.InfoActivity"
+            android:parentActivityName=".presentation.home.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,13 +1,16 @@
 package com.vsapp.petcare.datamodels;
 
+import java.io.Serializable;
+
 /**
  * Created by venkat on 23/1/18.
  */
 
-public class DogList {
+public class DogList implements Serializable{
     String dogName;
     String dogImage;
     String description;
+    int position;
 
     public DogList() {
         super();
@@ -21,6 +24,14 @@ public class DogList {
 
     public String getDogName() {
         return dogName;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public void setDogName(String dogName) {

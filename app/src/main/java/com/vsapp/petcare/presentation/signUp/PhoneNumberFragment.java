@@ -19,9 +19,6 @@ import com.vsapp.petcare.Utils.ActivityUtils;
 import com.vsapp.petcare.Utils.Utils;
 
 
-/**
- * Created by venkat on 21/1/18.
- */
 
 public class PhoneNumberFragment extends Fragment {
 

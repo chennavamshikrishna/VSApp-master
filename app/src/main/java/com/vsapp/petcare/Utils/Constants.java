@@ -1,8 +1,6 @@
 package com.vsapp.petcare.Utils;
 
-/**
- * Created by venkat on 19/1/18.
- */
+
 
 public class Constants {
     public static final String EMAIL_ID = "emailId";

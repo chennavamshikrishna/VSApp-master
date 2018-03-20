@@ -2,6 +2,7 @@ package com.vsapp.petcare.presentation.home;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,18 +31,21 @@ import com.vsapp.petcare.datamodels.DogList;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class MainActivity extends AppCompatActivity  {
 
     ProgressDialog progressDialog;
     DogAdapter dogAdapter;
+    DogList d1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        d1=new DogList();
        // progressDialog = Utils.showLoadingDialog(getContext(), true);
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("dogs");
-        databaseReference.keepSynced(true);
 
         FirebaseRecyclerOptions<DogList> options =
                 new FirebaseRecyclerOptions.Builder<DogList>()
@@ -75,14 +80,17 @@ public class MainActivity extends AppCompatActivity {
          *
          * @param options
          */
+
         DogAdapter(FirebaseRecyclerOptions<DogList> options) {
             super(options);
         }
 
         @Override
-        protected void onBindViewHolder(final ViewHolder holder, int position, DogList model) {
+        protected void onBindViewHolder(final ViewHolder holder, final int position, DogList model) {
             holder.getViewDataBinding().setVariable(BR.dog, model);
             holder.getViewDataBinding().setVariable(BR.img,model);
+            final FrameLayout fm=holder.getViewDataBinding().getRoot().findViewById(R.id.content_view);
+
             Glide.with(getContext()).load(model.getDogImage()).into((ImageView) holder.getViewDataBinding().getRoot().findViewById(R.id.dog_icon));
             Glide.with(getContext()).load(model.getDogImage()).into((ImageView) holder.getViewDataBinding().getRoot().findViewById(R.id.image2));
 
@@ -90,12 +98,19 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ((FoldingCell) v).toggle(false);
+                    fm.setVisibility(View.VISIBLE);
                 }
             });
             Log.d("vamshi",model.getDogImage());
            holder.getViewDataBinding().getRoot().findViewById(R.id.information).setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
+                   d1.setPosition(holder.getAdapterPosition());
+                   Intent i=new Intent(MainActivity.this,InfoActivity.class);
+                   i.putExtra("object",  d1);
+
+                   startActivity(i);
+
                    Toast.makeText(MainActivity.this,"pressed",Toast.LENGTH_SHORT).show();
 
                }
@@ -107,10 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        @Override
-        public int getItemCount() {
-            return super.getItemCount();
-        }
+
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -121,14 +133,12 @@ public class MainActivity extends AppCompatActivity {
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private final ViewDataBinding viewDataBinding;
-        ImageView img;
         Button b1;
 
         ViewHolder(View itemView) {
             super(itemView);
             viewDataBinding = DataBindingUtil.bind(itemView);
-            img=findViewById(R.id.dog_icon);
-            b1=findViewById(R.id.info);
+
         }
 
         ViewDataBinding getViewDataBinding() {
